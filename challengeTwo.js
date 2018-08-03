@@ -20,11 +20,7 @@
 //                 break;
 //             }
 //         }
-//         // if(array[i] in hashTable){
-//         //     hashTable.pop(array[i])
-//         // }
 //         hashTable[array[i]] = true;
-//         console.log(hashTable)
 //     }
 //     console.log(results);
 // }
@@ -34,25 +30,19 @@
 
 
 // refer to notes... I kick ass! I like this way better.
+// The algorithm above doesn't return what I want when duplicate numbers are invloved.
 array = [4,7,12,12,3,7,2,8,7,12];
 target = 19;
 
 const twoSum = (array, target) => {
     let map = {},
         results = [];
-
     for (let i=0; i<array.length; i++) {
-
       if (map[array[i]] !== undefined) {
-
         results.push([map[array[i]], array[i]])
-        console.log([map[array[i]], array[i]])
-      } 
-
-      else {
+      } else {
         map[target - array[i]] = array[i];
       }
-
     }
     return results;
   }
